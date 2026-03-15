@@ -166,7 +166,7 @@ font-weight:600;
 <h2>Masuk ke MELIORA</h2>
 <p class="subtitle">Gunakan akun sekolah untuk melanjutkan.</p>
 
-<form action="index.php" method="post">
+<form action="proses_login.php" method="post">
 
 <div class="form-group">
 <label>Email / Username</label>

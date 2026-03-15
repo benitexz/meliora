@@ -1,22 +1,11 @@
 <?php 
-$admin=$_REQUEST['email'];
+session_start();
 
-if($admin!="admin")
-{
-
+if(isset($_SESSION['login'])){
+    header("Location: index.php");
+}
 ?>
 
-<script language="javascript">
-
-    window.location = "login.php"
-
-   </script>
-<?php }
-else
-{
-
-
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -171,94 +160,22 @@ color:#666;
 
 <!-- SIDEBAR -->
 
-<div class="sidebar">
-
-<h2>MELIORA</h2>
-
-<ul>
-<li>Dashboard</li>
-<li>Lesson Plan</li>
-<li>Attendance</li>
-<li>Child Development</li>
-<li class="active">Documentation</li>
-<li>Weekly Summary (AI)</li>
-<li>Report</li>
-<li>Student Profile</li>
-<li>Collaboration</li>
-<li><a href="meeting.html">Meeting Notes</a></li>
-<li>Monthly Reflection</li>
-<li>Annual Plan</li>
-<li>AI Assistant</li>
-</ul>
-
-</div>
+<?php include "menu.php";?>
 
 <!-- MAIN -->
 
 <div class="main">
-
-<div class="header">
-<h1>Documentation</h1>
-<span>Guru Kelas K2</span>
-</div>
-
-<div class="container">
-
-<div class="container-top">
-<h2>Dokumentasi Pembelajaran</h2>
-<button class="upload-btn">Upload Foto/Video</button>
-</div>
-
-<div class="filter">
-Filter: Kelas K2 | Tema: Kebersihan | Tanggal: September 2026
-</div>
-
-<!-- GRID -->
-
-<div class="grid">
-
-<div class="card">
-<div class="preview">Preview</div>
-<h3>Kegiatan Art & Craft</h3>
-<p>Tanggal: 12 Sept 2026</p>
-</div>
-
-<div class="card">
-<div class="preview">Preview</div>
-<h3>Belajar Bahasa</h3>
-<p>Tanggal: 12 Sept 2026</p>
-</div>
-
-<div class="card">
-<div class="preview">Preview</div>
-<h3>Music & Movement</h3>
-<p>Tanggal: 12 Sept 2026</p>
-</div>
-
-<div class="card">
-<div class="preview">Preview</div>
-<h3>Science Activity</h3>
-<p>Tanggal: 12 Sept 2026</p>
-</div>
-
-<div class="card">
-<div class="preview">Preview</div>
-<h3>Outdoor Play</h3>
-<p>Tanggal: 12 Sept 2026</p>
-</div>
-
-<div class="card">
-<div class="preview">Preview</div>
-<h3>Phonics Session</h3>
-<p>Tanggal: 12 Sept 2026</p>
-</div>
-
-</div>
-
-</div>
+<?php
+  if (!isset($_GET['p'])) {
+                include ('content.php');
+              } 
+              else { 
+                $page = $_GET['p'];
+                include  $page . ".php";
+              }
+?>
 
 </div>
 
 </body>
 </html>
-<?php } ?>
