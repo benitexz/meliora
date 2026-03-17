@@ -11,36 +11,7 @@ display:flex;
 background:#f0f2f6;
 }
 
-/* SIDEBAR */
 
-.sidebar{
-width:230px;
-background:#15294b;
-color:white;
-min-height:100vh;
-padding:30px 20px;
-}
-
-.sidebar h2{
-margin-bottom:30px;
-letter-spacing:2px;
-}
-
-.sidebar ul{
-list-style:none;
-}
-
-.sidebar ul li{
-padding:10px 0;
-opacity:0.9;
-cursor:pointer;
-}
-
-.sidebar ul li.active{
-border-left:4px solid #3c7cff;
-padding-left:10px;
-font-weight:bold;
-}
 
 
 /* MAIN */
